@@ -34,11 +34,7 @@ for ewsdtf in range(kaisuu):
             password.append(level2[random.randint(0,61)])#level2の0~61までの値をpasswordに追加する(計62個)
         if level==3:
             password.append(level3[random.randint(0,75)])#level3の0~75までの値をpasswordに追加する(計76個)
-    password=str(password)#strに変換
-    password=password.replace(", ", "")#, を削除(スペースに置き換え)
-    password=password.replace("[", "")#[を削除(スペースに置き換え)
-    password=password.replace("]", "")#]を削除(スペースに置き換え)
-    password=password.replace("'", "")#'を削除(スペースに置き換え)
+    password=''.join(str(item) for item in password)
     print(password)
     password=[]#リセット
     
